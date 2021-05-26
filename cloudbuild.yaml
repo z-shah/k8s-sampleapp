@@ -26,7 +26,7 @@ steps:
   - prepare
   - --filename=kubernetes-manifests/
   - --image=gcr.io/$PROJECT_ID/frontend:$SHORT_SHA
-  - --output='gs://artifacts.anthos-onprem-demo-314300.appspot.com/k8s-manifests'
+  - --output=gs://artifacts.anthos-onprem-demo-314300.appspot.com/k8s-manifests
 
 ## Deploy microservices-demo app to anthos on prem cluster
 
