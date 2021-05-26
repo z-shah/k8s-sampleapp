@@ -17,3 +17,14 @@ steps:
   args: [ 'build', '-t', 'gcr.io/${PROJECT_ID}/my-sampleapp', '.' ]
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/${PROJECT_ID}/my-sampleapp']
+# deploy sample app to anthos on prem cluster
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: /bin/sh
+  id: Deploy to On-Prem Cluster
+  args:
+  - '-c'
+  - |
+    set -x && \
+    export KUBECONFIG="$(pwd)/gateway-kubeconfig" && \
+    gcloud beta container hub memberships get-credentials ${CLUSTER_NAME} && \
+    kubectl --kubeconfig gateway-kubeconfig apply -f kubernetes-manifests/myapp.yaml
