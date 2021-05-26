@@ -26,18 +26,17 @@ steps:
   - prepare
   - --filename=kubernetes-manifests/
   - --image=gcr.io/$PROJECT_ID/frontend:$SHORT_SHA
-  - --output=gs://artifacts.anthos-onprem-demo-314300.appspot.com/k8s-manifests
 
 ## Deploy microservices-demo app to anthos on prem cluster
 
-# - name: 'gcr.io/cloud-builders/gcloud'
-#   entrypoint: /bin/sh
-#   id: Deploy to On-Prem Cluster
-#   dir: kubernetes-manifests
-#   args:
-#   - '-c'
-#   - |
-#     set -x && \
-#     export KUBECONFIG="$(pwd)/gateway-kubeconfig" && \
-#     gcloud beta container hub memberships get-credentials ${_CLUSTER_NAME_} && \
-#     kubectl --kubeconfig gateway-kubeconfig apply -f kubernetes-manifests.yaml
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: /bin/sh
+  id: "Deploy to Anthos cluster on VMware"
+  dir: kubernetes-manifests
+  args:
+  - '-c'
+  - |
+    set -x && \
+    export KUBECONFIG="$(pwd)/gateway-kubeconfig" && \
+    gcloud beta container hub memberships get-credentials ${_CLUSTER_NAME_} && \
+    kubectl --kubeconfig=gateway-kubeconfig apply -f output/expanded
