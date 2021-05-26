@@ -5,7 +5,8 @@ metadata:
   labels:
     app: hello-world
 spec:
-  type: ClusterIP # maybe LoadBalancer for example purposes?
+  type: LoadBalancer
+  loadBalancerIP: 172.23.128.84
   ports:
     - port: 8080
   selector:
