@@ -17,7 +17,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: gcr.io/google-samples/microservices-demo/frontend:v0.2.3
+          image: gcr.io/anthos-onprem-demo-314300/frontend:latest
           ports:
           - containerPort: 8080
           readinessProbe:
