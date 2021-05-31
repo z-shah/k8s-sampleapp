@@ -38,5 +38,4 @@ steps:
     set -x && \
     export KUBECONFIG="$(pwd)/gateway-kubeconfig" && \
     gcloud beta container hub memberships get-credentials ${_CLUSTER_NAME_} && \
-    kubectl --kubeconfig=gateway-kubeconfig create namespace demo && \
     kubectl --kubeconfig=gateway-kubeconfig apply -f output/expanded --namespace demo
