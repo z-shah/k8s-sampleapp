@@ -87,6 +87,7 @@ metadata:
 spec:
   hosts:
   - "frontend.demo.svc.cluster.local"
+  - "hipstershop.demo.com"
   http:
   - route:
     - destination:
