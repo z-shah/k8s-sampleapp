@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: emailservice
+  annotations:
+    prometheus.io/scrape: "true"
 spec:
   selector:
     matchLabels:
@@ -47,6 +49,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: emailservice
+  annotations:
+    prometheus.io/scrape: "true"
 spec:
   type: ClusterIP
   selector:
@@ -60,6 +64,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: checkoutservice
+  annotations:
+    prometheus.io/scrape: "true"
 spec:
   selector:
     matchLabels:
@@ -116,6 +122,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: checkoutservice
+  annotations:
+    prometheus.io/scrape: "true"
 spec:
   type: ClusterIP
   selector:
@@ -129,6 +137,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: recommendationservice
+  annotations:
+    prometheus.io/scrape: "true"
 spec:
   selector:
     matchLabels:
@@ -176,6 +186,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: recommendationservice
+  annotations:
+    prometheus.io/scrape: "true"
 spec:
   type: ClusterIP
   selector:
@@ -261,6 +273,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: frontend
+  annotations:
+    prometheus.io/scrape: "true"
 spec:
   type: ClusterIP
   selector:
@@ -274,6 +288,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: paymentservice
+  annotations:
+    prometheus.io/scrape: "true"
 spec:
   selector:
     matchLabels:
@@ -311,6 +327,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: paymentservice
+  annotations:
+    prometheus.io/scrape: "true"
 spec:
   type: ClusterIP
   selector:
@@ -324,6 +342,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: productcatalogservice
+  annotations:
+    prometheus.io/scrape: "true"
 spec:
   selector:
     matchLabels:
@@ -369,6 +389,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: productcatalogservice
+  annotations:
+    prometheus.io/scrape: "true"
 spec:
   type: ClusterIP
   selector:
@@ -382,6 +404,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cartservice
+  annotations:
+    prometheus.io/scrape: "true"
 spec:
   selector:
     matchLabels:
@@ -422,6 +446,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: cartservice
+  annotations:
+    prometheus.io/scrape: "true"
 spec:
   type: ClusterIP
   selector:
@@ -470,6 +496,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: currencyservice
+  annotations:
+    prometheus.io/scrape: "true"
 spec:
   selector:
     matchLabels:
@@ -514,6 +542,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: currencyservice
+  annotations:
+    prometheus.io/scrape: "true"
 spec:
   type: ClusterIP
   selector:
@@ -527,6 +557,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: shippingservice
+  annotations:
+    prometheus.io/scrape: "true"
 spec:
   selector:
     matchLabels:
@@ -572,6 +604,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: shippingservice
+  annotations:
+    prometheus.io/scrape: "true"
 spec:
   type: ClusterIP
   selector:
@@ -585,6 +619,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: redis-cart
+  annotations:
+    prometheus.io/scrape: "true"
 spec:
   selector:
     matchLabels:
@@ -625,6 +661,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: redis-cart
+  annotations:
+    prometheus.io/scrape: "true"
 spec:
   type: ClusterIP
   selector:
@@ -638,6 +676,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: adservice
+  annotations:
+    prometheus.io/scrape: "true"
 spec:
   selector:
     matchLabels:
@@ -685,6 +725,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: adservice
+  annotations:
+    prometheus.io/scrape: "true"
 spec:
   type: ClusterIP
   selector:
